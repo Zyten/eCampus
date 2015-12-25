@@ -1,0 +1,189 @@
+<%@include file="taglib.jsp" %> 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>GATES Academy</title>
+
+        <!-- Favicon-->
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/portal/img/favicon.ico" />
+
+        <link href="${pageContext.request.contextPath}/css/customize-template.css" rel="stylesheet" />
+        <script src="${pageContext.request.contextPath}/js/jquery/jquery-1.8.2.min.js" type="text/javascript"></script>
+    </head>
+
+
+    <body onload=$("option[value='10']").attr('selected','selected');">
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button class="btn btn-navbar" data-toggle="collapse" data-target="#app-nav-top-bar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="" class="brand"><img src="${pageContext.request.contextPath}/portal/img/teamlogo.png" /><span>&nbsp;GATES ACADEMY</span></a>
+
+                    <div id="app-nav-top-bar" class="nav-collapse">
+                        <ul class="nav pull-right">
+                            <li>
+                                <a href="${pageContext.request.contextPath}/logout.htm">Logout</a>
+                            </li>
+
+                        </ul> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="body-container">
+            <div id="body-content">
+
+                <div class="body-nav body-nav-horizontal body-nav-fixed">
+                    <div class="container">
+                        <ul>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/dashboard.htm">
+                                    <i class="icon-dashboard icon-large"></i> Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/registration.htm">
+                                    <i class="icon-user icon-large"></i> Registration
+                                </a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/certificate.htm">
+                                    <i class="icon-certificate icon-large"></i> Certificate
+                                </a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/configuration.htm">
+                                    <i class="icon-cogs icon-large"></i> Configuration
+                                </a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/attendance.htm">
+                                    <i class="icon-calendar icon-large"></i> Attendance
+                                </a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/mark.htm">
+                                    <i class="icon-adjust icon-large"></i> Grading
+                                </a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/application.htm">
+                                    <i class="icon-bar-chart icon-large"></i> Application
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <section class="nav nav-page">
+                    <div class="container">
+                        <div class="row">
+                            <div class="span7">
+                                <header class="page-header">
+                                    <h3>Attendance<br/>
+                                        <small>Update Attendance</small>
+                                    </h3>
+                                </header>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+                <section class="page container">
+
+                    <table class="table table-condensed">
+                        <thead>
+                        </thead>
+                        <tbody>
+                          
+                            <tr>
+                                <td>Programme Code</td>
+                                <td><%= request.getParameter("pcode") %></td>
+                                 
+                                <td>Programme Name</td>
+                                <c:forEach items="${progAttendance}" var="data" varStatus="loop">
+                                <td>${data.progNameprogramme}</td>
+                                </c:forEach>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered table-condensed">
+                            <thead>
+                                    <th><center>No</center></th>
+                                    <th><center>ID</center></th>
+                                    <th><center>Name</center></th>
+                                    <th><center>NRIC</center></th>
+
+                                    <th><center>Week 1</center></th>
+                                    <th><center>Week 2</center></th>
+                                    <th><center>Week 3</center></th>
+                                    <th><center>Week 4</center></th>
+                                    <th><center>Action</center></th>
+                            </thead>
+                            <tbody>
+                                 
+                                <c:forEach items="${applicantList}" var="data" varStatus="loop">
+                                     <form action="${pageContext.request.contextPath}/attendance_update.htm" method="post">
+                                    <tr>
+                                        <td><center>${loop.count}</center></td>
+                                        <td><center><input name="id"type="hidden" value="${data.applicantIDapplicant}">${data.applicantIDapplicant}</center></td>
+                                        <td><center>${data.nameApplicant}</center></td>
+                                        <td><center>${data.nricApplicant}</center></td>
+                                
+                                        <td><center><select style="width:100px;" name="week1"><option value="0" selected><center>Absent</center></option><option value="1"><center>Present</center></option></select></center></td>                                
+                                        <td><center><select style="width:100px;" name="week2"><option value="0" selected><center>Absent</center></option><option value="1"><center>Present</center></option></select></center></td>                                
+                                        <td><center><select style="width:100px;" name="week3"><option value="0" selected><center>Absent</center></option><option value="1"><center>Present</center></option></select></center></td>                                
+                                        <td><center><select style="width:100px;" name="week4"><option value="0" selected><center>Absent</center></option><option value="1"><center>Present</center></option></select></center></td>                                
+                                        <td colspan="3"><center><input type="submit" value="Update"></center></td>
+                                    </tr>
+                                    </form>
+                                </c:forEach>
+                            </tbody>
+                            </table>
+                            
+                        </section>
+
+
+
+                                            </div>
+                                            </div>
+
+                                            <div id="spinner" class="spinner" style="display:none;">
+                                                Loading&hellip;
+                                            </div>
+
+                                            <footer class="application-footer">
+                                                <div class="container">
+
+                                                    <div class="disclaimer">
+                                                        <p>&copy; 2015 Copyright - GATES Academy.</p>
+                                                    </div>
+                                                </div>
+                                            </footer>           
+                                            <script type="text/javascript">
+                                                $(function () {
+                                                    $('#sample-table').tablesorter();
+                                                    $('#datepicker').datepicker();
+                                                    $(".chosen").chosen();
+                                                });
+                                            </script>
+                                            </body>
+
+                                            </html>
