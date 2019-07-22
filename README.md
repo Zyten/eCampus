@@ -1,13 +1,24 @@
 # eCampus
-A team project developed under GATES IT Solution training programme.
+:office: A team project developed under GATES IT Solution training programme.
+***
+### Synopsis
 
-Collab: <br>
-mr-imperfect -- <a href="https://www.facebook.com/allrangeboyz">fb</a>
+Simple mini-project using Spring MVC. It fits a minimal use case for an eCampus system but was mainly meant to serve as an outlet to apply the knowledge gained throughout the programme.  
 
-Tools: <br>
-Netbeans 8.1 <br>
-Glassfish Server 4.0 <br>
-Java EE 7 Web <br>
-Spring Web MVC 4.0.1 <br>
-Hibernate 4.3.1 <br>
-iReports plugin for Netbeans <br>
+### Tools Used
+
+- Netbeans 8.1
+- Glassfish Server 4.0
+- Java EE 7 Web
+- Spring Web MVC 4.0.1
+- Hibernate 4.3.1
+- iReports plugin for Netbeans
+
+### Project Members
+
+1. [@Zyten](http://github.com/Zyten "Ruban Selvarajah") -- Ruban Selvarajah
+2. [@along404](http://github.com/along404 "Muhammad Shukri Bin Che Lah") -- Muhammad Shukri Bin Che Lah
+
+### License
+
+![MIT license](https://img.shields.io/npm/l/express.svg)
