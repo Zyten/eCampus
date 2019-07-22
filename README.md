@@ -16,8 +16,8 @@ Simple mini-project using Spring MVC. It fits a minimal use case for an eCampus 
 
 ### Project Members
 
-1. [@Zyten](http://github.com/Zyten "Ruban Selvarajah") -- Ruban Selvarajah
-2. [@along404](http://github.com/along404 "Muhammad Shukri Bin Che Lah") -- Muhammad Shukri Bin Che Lah
+1. [@along404](http://github.com/along404 "Muhammad Shukri Bin Che Lah") -- Muhammad Shukri Bin Che Lah
+2. [@Zyten](http://github.com/Zyten "Ruban Selvarajah") -- Ruban Selvarajah
 
 ### License
 
